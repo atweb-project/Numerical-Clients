@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Numerical Clients</title>
+    <link rel="stylesheet" type="text/css" href="assests/css/app.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+</head>
+<body>
+<div class="select-wrapper" data-bind="with: view">
+    <span class="client-text">Choose client</span>
+    <select class="clients" data-bind="options: availableClients, value: selectedClient">
+
+    </select>
+    <div class="clear"></div>
+</div>
+<div id="lotto-wrapper" class="boards" data-bind="with: lotto, visible: view.selectedClient() === 'Lotto'">
+    <div class="left-board">
+        <div class="left-board-text">Number selections</div>
+        <div class="number-container">
+            <ul class="left-board-list" data-bind="foreach: allNumbers">
+                <li data-bind="text: numbers, click: function(){$parent.currentSelected($parent, $data);},css:{'itemSelect': $parent.selectedNumbers.indexOf(numbers) > -1 }"></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <button data-bind="click: clearAll">Clear all</button>
+            <button class="add" data-bind="enable: maximumNumbers, click: addColumn">Add column</button>
+        </div>
+    </div>
+    <div class="right-board">
+        <div class="right-board-text">Available columns created by the user</div>
+        <div class="column-container">
+            <ol class="right-board-list" data-bind="foreach: selectedColumns">
+                <li class="column">
+                    <ul class="selected-numbers" data-bind='foreach: column'>
+                        <li data-bind='text: $data'></li>
+                    </ul>
+                    <a href='#' data-bind='click: $parent.removeColumn.bind($parent)'>Delete</a>
+                </li>
+            </ol>
+        </div>
+        <p class='grandTotal'>
+            Total Cost: <span data-bind='text: formatCurrency(totalPrice())'> </span>
+        </p>
+    </div>
+    <div class="clear"></div>
+</div>
+<div id="keno-wrapper" class="boards" data-bind="with: keno, visible: view.selectedClient() === 'Keno'">
+    <div class="left-board">
+        <div class="left-board-text">Number selections</div>
+        <div class="number-container">
+            <ul class="left-board-list" data-bind="foreach: allNumbers">
+                <li data-bind="text: numbers, click: function(){$parent.currentSelected($parent, $data);},css:{'itemSelect': $parent.selectedNumbers.indexOf(numbers) > -1 }"></li>
+            </ul>
+        </div>
+        <div class="buttons">
+            <button data-bind="click: clearAll">Clear all</button>
+            <button class="add" data-bind="enable: maximumNumbers, click: addColumn">Add column</button>
+        </div>
+    </div>
+    <div class="right-board">
+        <div class="right-board-text">Available columns created by the user</div>
+        <div class="column-container">
+            <ol class="right-board-list" data-bind="foreach: selectedColumns">
+                <li class="column">
+                    <ul class="selected-numbers" data-bind='foreach: column'>
+                        <li data-bind='text: $data'></li>
+                    </ul>
+                    <a href='#' data-bind='click: $parent.removeColumn.bind($parent)'>Delete</a>
+                </li>
+            </ol>
+        </div>
+        <p class='grandTotal'>
+            Total Cost: <span data-bind='text: formatCurrency(totalPrice())'> </span>
+        </p>
+    </div>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript" src="assests/js/app.js"></script>

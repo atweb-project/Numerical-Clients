@@ -1,0 +1,21 @@
+.select-wrapper {margin: 0 auto;display: table;padding-top: 20px;}
+.client-text {float: left;margin-right:10px;}
+.clients {float: left;width: 100px;}
+.boards {margin-top: 20px;}
+.left-board {width: 55%;float: left;margin-right: 40px;}
+.number-container {width: 100%;border: 1px solid #000;height: 320px;}
+.number-container li {list-style-type: none;float: left;width: 40px;height: 30px;border: 1px solid #000;margin: 5px;text-align: center;padding-top: 15px;cursor:pointer;}
+.left-board-list {height: 290px;padding: 0px 4px 0px 25px;}
+.left-board-text{margin: 0 auto;display: table;padding-bottom: 15px;}
+.itemSelect {background-color:#0069ab;color:#fff;}
+.buttons {text-align: right;margin-top: 10px;margin-right: 10px;}
+.add{margin-left: 15px;}
+.right-board {width: 40%;float: left;}
+.right-board-text{margin: 0 auto;display: table;padding-bottom: 15px;}
+.column-container {width: 100%;border: 1px solid #000;height: 320px;overflow: hidden;}
+.right-board-list {height: 290px;padding: 0px 4px 0px 10px;overflow: auto;width: 95%;}
+.column {margin-left: 20px;height: 35px;}
+.selected-numbers {height: 100%;padding: 0;width: 85%;display: inline-block;}
+.selected-numbers li {list-style-type: none;width: 35px;height: 20px;border: 1px solid #000;margin: 5px;text-align: center;padding-top: 5px;display: inline-block;}
+.grandTotal {text-align: right;margin-right: 30px;}
+.clear {clear: both;}
