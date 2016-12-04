@@ -1,3 +1,5 @@
+"use strict";
+
 /**
  * Base Client Class, contains all the base methods
  * @constructor
@@ -24,7 +26,7 @@ var BaseClient = function () {
                 self.selectedNumbers.push(that.isSelected());
             } else { alert("You have already choose this number"); }
         } else { alert("You cannot choose more than " + self.numberToselect() +" numbers");}
-    }
+    };
     self.allNumbers =  ko.computed(function(){
         var arr = [];
         for (var i = 1; i <= self.maxSquares(); i++) {
@@ -32,7 +34,7 @@ var BaseClient = function () {
         }
         return arr;
     });
-    self.clearAll = function (){ self.selectedNumbers([]);}
+    self.clearAll = function (){ self.selectedNumbers([]);};
     self.maximumNumbers = ko.pureComputed(function(){
         return self.selectedNumbers().length > self.maxNumber();
     }, self);
@@ -45,7 +47,7 @@ var BaseClient = function () {
             alert("You cannot add more than "+ self.maxColumns() + " columns");
         }
     }.bind(self);
-    self.removeColumn = function(column) { self.selectedColumns.remove(column); }
+    self.removeColumn = function(column) { self.selectedColumns.remove(column); };
     self.totalPrice = ko.pureComputed(function() {
         var total = 0;
         for( var i = 0; i < self.selectedColumns().length; i++){
