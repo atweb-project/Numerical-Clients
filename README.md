@@ -1,2 +1,2 @@
 # Numerical-Clients
-A Simple Knockout App used for creating numerical clients
+A Simple KnockoutJS App used for creating numerical clients
